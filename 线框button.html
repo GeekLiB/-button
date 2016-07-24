@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		button{
+			background: none;
+  border: 0;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 2px #f45e61;
+  color: #f45e61;
+  font-size: inherit;
+  font-weight: 700;
+  margin: 1em;
+  padding: 1em 2em;
+  text-align: center;
+  text-transform: capitalize;
+  position: relative;
+  vertical-align: middle;
+		}
+	button::before, button::after {
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  width: 100px;
+  height:30px;
+}
+		.main::before, .main::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.main::before {
+  top: 0;
+  left: 0;
+}
+.main::after {
+  bottom: 0;
+  right: 0;
+}
+.main:hover {
+  color: #60daaa;
+}
+.main:hover::before, .main:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.main:hover::before {
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+          transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.main:hover::after {
+  border-bottom-color: #60daaa;
+  border-left-color: #60daaa;
+  -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+          transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+	</style>
+</head>
+<body>
+<button class="main">button</button>
+</body>
+</html>
